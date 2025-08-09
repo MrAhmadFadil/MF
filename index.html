@@ -1,31 +1,3 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "muhammadfadillah2907@gmail.com"; // Email tujuan
-    $full_name = $_POST['full_name'] ?? '';
-    $email_address = $_POST['email_address'] ?? '';
-    $mobile_number = $_POST['mobile_number'] ?? '';
-    $email_subject = $_POST['email_subject'] ?? 'No Subject';
-    $your_message = $_POST['your_message'] ?? '';
-
-    $message = "
-    Name: $full_name
-    Email: $email_address
-    Mobile: $mobile_number
-
-    Message:
-    $your_message
-    ";
-
-    $headers = "From: $email_address";
-
-    if (mail($to, $email_subject, $message, $headers)) {
-        echo "<script>alert('Pesan berhasil dikirim!'); window.location.href='#contact';</script>";
-    } else {
-        echo "<script>alert('Gagal mengirim pesan. Pastikan hosting mendukung fungsi mail().'); window.location.href='#contact';</script>";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,17 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section class="home" id="home">
         <div class="home-content">
-            <!-- Audio -->
+            <!-- Gambar -->
+            <img src="img/pp.jpg" alt="Muhammad Fadillah" width="200" class="rounded-circle img-thumbnail" />
+<!-- Audio -->
             <audio id="bg-music" src="img/music.mp3" autoplay loop muted></audio>
-
-            <!-- Button (tengah sebelum gambar) -->
             <button id="play-btn" class="play-btn">
                 <i class='bx bx-music'></i> Play Music
             </button>
-
-            <!-- Gambar -->
-            <img src="img/pp.jpg" alt="Muhammad Fadillah" width="200" class="rounded-circle img-thumbnail" />
-
             <h3>Assalamualaikum, It's Me</h3>
             <h1>Muhammad Fadillah</h1>
             <h3>And I'm a <span class="multiple-text"></span></h3>
@@ -198,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <form method="POST">
+        <form method="">
             <div class="input-box">
                 <input type="text" name="full_name" placeholder="Full Name" required>
                 <input type="email" name="email_address" placeholder="Email Address" required>
