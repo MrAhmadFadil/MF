@@ -1,0 +1,186 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $to = "muhammadfadillah2907@gmail.com"; // Email tujuan
+    $full_name = $_POST['full_name'] ?? '';
+    $email_address = $_POST['email_address'] ?? '';
+    $mobile_number = $_POST['mobile_number'] ?? '';
+    $email_subject = $_POST['email_subject'] ?? 'No Subject';
+    $your_message = $_POST['your_message'] ?? '';
+
+    $message = "
+    Name: $full_name
+    Email: $email_address
+    Mobile: $mobile_number
+
+    Message:
+    $your_message
+    ";
+
+    $headers = "From: $email_address";
+
+    if (mail($to, $email_subject, $message, $headers)) {
+        echo "<script>alert('Pesan berhasil dikirim!'); window.location.href='#contact';</script>";
+    } else {
+        echo "<script>alert('Gagal mengirim pesan. Pastikan hosting mendukung fungsi mail().'); window.location.href='#contact';</script>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Fadil</title>
+    <link rel="stylesheet" href="stylee.css">
+    <!-- Box Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portofolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <img src="img/pp.jpg" alt="Muhammad Fadillah" width="200" class="rounded-circle img-thumbnail" />
+            <h3>Assalamualaikum, It's Me</h3>
+            <h1>Muhammad Fadillah</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>Halo! Nama saya Muhammad Fadillah, tapi teman-teman biasa memanggil saya Fadil atau Dilan. Saya berusia 2 tahun dan berasal dari Desa Oo, Kabupaten Dompu, Nusa Tenggara Barat. Saat ini, saya sedang menempuh pendidikan di jurusan Teknik Informatika di Universitas Teknologi Mataram.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/fadillah.dila.7140"><i class='bx bxl-facebook'></i></a>
+                <a href="https://wa.me/085951586659"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://www.instagram.com/dylnn.mhmd/"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/mrahmadfadil"><i class='bx bxl-github'></i></a>
+            </div>
+            <a href="img/cv.pdf" class="btn" download>Download CV</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Web Development</h3>
+            <p>Halo! Nama saya Muhammad Fadillah, tapi teman-teman biasa memanggil saya Fadil atau Dilan.
+                Saya berusia 20 tahun dan berasal dari Desa Oo, Kabupaten Dompu, Nusa Tenggara Barat.
+                Saat ini, saya sedang menempuh pendidikan di jurusan Teknik Informatika di Universitas Teknologi Mataram.
+                Saya adalah mahasiswa aktif jurusan Teknik Informatika yang memiliki minat besar dalam dunia pengembangan web,
+                baik di sisi front-end maupun back-end. Saya selalu bersemangat untuk mempelajari teknologi baru,
+                menciptakan solusi inovatif, dan mengembangkan sistem yang bermanfaat bagi banyak orang.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- Portfolio section design -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="img/project1.png" alt="web design">
+                <div class="portfolio-layer">
+                    <h4>Web Laundry</h4>
+                    <p>Web ini dibuat untuk project akhir matakuliah Rekayasa Perangat lunak
+                        dan ini untuk tampilan usernya.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="img/project1.2.png" alt="web design">
+                <div class="portfolio-layer">
+                    <h4>Web Laundry</h4>
+                    <p>Web ini dibuat untuk project akhir matakuliah Rekayasa Perangat lunak
+                        dan ini untuk tampilan adminnya.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="img/project2.png" alt="web design">
+                <div class="portfolio-layer">
+                    <h4>Web Cek Followers</h4>
+                    <p>Web ini dibuat hanya untuk gabut aja dan sebenarnya bisa menghasilkan cuan
+                        dan target konsumennya adalah seleb instagram yang egonya melebihi langit.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="img/project2.2.png" alt="web design">
+                <div class="portfolio-layer">
+                    <h4>Web Cek Followers</h4>
+                    <p>Ini untuk hasilnya.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="img/project3.png" alt="web design">
+                <div class="portfolio-layer">
+                    <h4>Web Siakad</h4>
+                    <p>Web ini dibuat untuk project akhir matakuliah Pemograman Web
+                        dan ini untuk tampilan usernya.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="img/project3.2.png" alt="web design">
+                <div class="portfolio-layer">
+                    <h4>Web Siakad</h4>
+                    <p>Web ini dibuat untuk project akhir matakuliah Pemograman Web
+                        dan ini untuk tampilan adminnya.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        <form method="POST">
+            <div class="input-box">
+                <input type="text" name="full_name" placeholder="Full Name" required>
+                <input type="email" name="email_address" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="number" name="mobile_number" placeholder="Mobile Number">
+                <input type="text" name="email_subject" placeholder="Email Subject">
+            </div>
+            <textarea name="your_message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by MuhammadFadillah | All Right Reserved</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Costume js -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
